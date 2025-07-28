@@ -1,0 +1,20 @@
+July27
+- Built project sketch.
+- First commit to GitHub.
+
+July28
+- Fixed GET method, now working.
+- Moved Assessment files to a specific package.
+- Added access modifiers that were missing in the
+Controller and Service classes.
+- Made changes to the Exam class.
+- Removed the Subject class.
+- Uncommented and made changes to the Content class.
+- Related Exam and Content classes through @OneToMany
+and @ManyToOne.
+- Added POST method for exams table.
+- Separated the controllers, services and repositories,
+following the Single Responsibility Principle.
+- Tested GET methods on Exam entity.
+[To-do: fix GET on Content entity and
+check if POST is also still working on both]
