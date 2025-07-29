@@ -1,5 +1,6 @@
 package site.Spring.assessment;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 @Entity
@@ -11,8 +12,20 @@ public class Content {
     private Long id; //Primary Key
 
     @ManyToOne(fetch = FetchType.LAZY)
+    //Foreign Key
     @JoinColumn(name = "exam_id", nullable = false)
+    //Used to avoid errors when serializing FetchType.LAZY
+    @JsonIgnore
     private Exam exam;
+
+    //Used for retrieving the examId in GET without EAGER.
+    //Transient for not being added in the database as a column.
+    //As a Transient, it needs to be loaded with a method.
+    //That is: Content method loadExam().
+    @Transient
+    private Long examId; //Foreign Key for HTTP requests
+    @Transient
+    private String examName; //exam name for HTTP requests
 
     private String subject;
     private String text;
@@ -26,8 +39,16 @@ public class Content {
 
     public Content(Exam exam,
                    String subject,
-                   String text){
+                   String text) {
         this.exam = exam;
+        this.subject = subject;
+        this.text = text;
+    }
+
+    public Content(Long examId,
+                   String subject,
+                   String text) {
+        this.examId = examId;
         this.subject = subject;
         this.text = text;
     }
@@ -44,6 +65,14 @@ public class Content {
         this.exam = exam;
     }
 
+    public Long getExamId() {
+        return examId;
+    }
+
+    public String getExamName() {
+        return examName;
+    }
+
     public String getSubject() {
         return subject;
     }
@@ -58,5 +87,13 @@ public class Content {
 
     public void setText(String text) {
         this.text = text;
+    }
+
+    @PostLoad
+    public void loadExam() {
+        if (exam != null) {
+            examId = exam.getId();
+            examName = exam.getName();
+        }
     }
 }

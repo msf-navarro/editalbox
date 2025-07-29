@@ -19,7 +19,7 @@ public class ExamService {
         return examRepository.findAll();
     }
 
-    public Exam addExam(Exam exam) {
+    public Exam createExam(Exam exam) {
         return examRepository.save(exam);
     }
 }

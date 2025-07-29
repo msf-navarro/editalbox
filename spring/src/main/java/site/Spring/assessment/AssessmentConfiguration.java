@@ -35,7 +35,7 @@ public class AssessmentConfiguration implements CommandLineRunner{
         Content contentA1 = new Content(
                 examA,
                 "statistics",
-                "conditional probability");
+                "simple probability");
         contentRepository.save(contentA1);
 
         Content contentA2 = new Content(

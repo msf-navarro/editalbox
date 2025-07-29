@@ -24,7 +24,7 @@ public class ExamController {
     }
 
     @PostMapping(path = "/add_exam")
-    public Exam addExam(@RequestBody Exam exam) {
-        return examService.addExam(exam);
+    public Exam createExam(@RequestBody Exam exam) {
+        return examService.createExam(exam);
     }
 }

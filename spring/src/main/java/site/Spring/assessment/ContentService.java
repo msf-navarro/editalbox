@@ -4,22 +4,30 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class ContentService {
 
     private final ContentRepository contentRepository;
+    private final ExamRepository examRepository;
 
     @Autowired
-    ContentService(ContentRepository contentRepository){
+    ContentService(ContentRepository contentRepository,
+                   ExamRepository examRepository){
         this.contentRepository = contentRepository;
+        this.examRepository = examRepository;
     }
 
     public List<Content> gelAllContents(){
         return contentRepository.findAll();
     }
 
-    public Content addContent(Content content) {
+    public Content createContent(Content content) {
+        Optional<Exam> contentExamOptional =
+                examRepository.findById(content.getExamId());
+        if (contentExamOptional.isPresent())
+            content.setExam(contentExamOptional.get());
         return contentRepository.save(content);
     }
 }

@@ -24,7 +24,7 @@ public class ContentController {
     }
 
     @PostMapping(path = "/add_content")
-    public Content addContent(@RequestBody Content content){
-        return contentService.addContent(content);
+    public Content createContent(@RequestBody Content content){
+        return contentService.createContent(content);
     }
 }
