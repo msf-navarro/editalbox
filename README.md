@@ -32,4 +32,21 @@ July29
   in the Content GET when using FetchType.LAZY  
 - Added POST method for columns table that links the
   Column entity to an Exam entity using its id  
-  [To-do: add specific GETS, handle exceptions in requests]  
+  [To-do: add specific GETS, handle exceptions in requests]
+
+August01
+- Added GET(individual), PUT and DELETE methods to the
+Exam entity.  
+- Renamed some methods' url paths to mark them for later
+Spring Security implementations.
+- Added a specific GET method to request all Contents
+related to a specific Exam. (gelAllContentsFromExamId)
+- Added PUT and DELETE methods to the Content entity.
+- Handled null exceptions in PUT requests.
+- Tested internal interactions in Content PUT, e.g.
+changes in parameter exam using PUT are reflected in 
+the parameters examId and examName showed in the GET.
+- Tested interaction between Exam and Content requests,
+e.g. Exam PUT changes are present in Content GET.
+  [To-do: handle bad input in requests, Spring Security]
+

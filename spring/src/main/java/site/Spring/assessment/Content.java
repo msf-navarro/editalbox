@@ -69,6 +69,10 @@ public class Content {
         return examId;
     }
 
+    public void setExamId(Long examId) {
+        this.examId = examId;
+    }
+
     public String getExamName() {
         return examName;
     }

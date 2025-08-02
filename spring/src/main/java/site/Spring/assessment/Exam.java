@@ -14,6 +14,10 @@ public class Exam {
     private Long id; //Primary Key
     private String name;
     private Integer year;
+
+    //The column is named this way by default
+    //Still, this was added for later reference
+    @Column(name = "user_count")
     private Integer userCount;
 
     //(Doesn't make sense in here. Will be on /users package)
