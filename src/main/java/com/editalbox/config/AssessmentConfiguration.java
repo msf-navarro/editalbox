@@ -1,8 +1,12 @@
-package site.Spring.assessment;
+package com.editalbox.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Configuration;
+import com.editalbox.model.Content;
+import com.editalbox.repository.ContentRepository;
+import com.editalbox.model.Exam;
+import com.editalbox.repository.ExamRepository;
 
 @Configuration
 public class AssessmentConfiguration implements CommandLineRunner{

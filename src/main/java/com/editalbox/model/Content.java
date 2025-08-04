@@ -1,4 +1,4 @@
-package site.Spring.assessment;
+package com.editalbox.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;

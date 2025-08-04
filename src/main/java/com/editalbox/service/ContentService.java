@@ -1,5 +1,9 @@
-package site.Spring.assessment;
+package com.editalbox.service;
 
+import com.editalbox.model.Content;
+import com.editalbox.model.Exam;
+import com.editalbox.repository.ContentRepository;
+import com.editalbox.repository.ExamRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

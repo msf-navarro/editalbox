@@ -1,12 +1,10 @@
-package site.Spring.assessment;
+package com.editalbox.controller;
 
-import jakarta.persistence.CascadeType;
-import jakarta.persistence.OneToMany;
+import com.editalbox.service.ExamService;
+import com.editalbox.model.Exam;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.repository.query.Param;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @RestController
