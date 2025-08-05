@@ -1,5 +1,10 @@
-package site.Spring.assessment;
+package com.editalbox.service.impl;
 
+import com.editalbox.model.Content;
+import com.editalbox.model.Exam;
+import com.editalbox.repository.ContentRepository;
+import com.editalbox.repository.ExamRepository;
+import com.editalbox.service.ContentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -7,14 +12,14 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class ContentService {
+public class ContentServiceImpl implements ContentService {
 
     private final ContentRepository contentRepository;
     private final ExamRepository examRepository;
 
     @Autowired
-    ContentService(ContentRepository contentRepository,
-                   ExamRepository examRepository){
+    ContentServiceImpl(ContentRepository contentRepository,
+                       ExamRepository examRepository){
         this.contentRepository = contentRepository;
         this.examRepository = examRepository;
     }
@@ -68,13 +73,3 @@ public class ContentService {
             contentRepository.delete(contentOptional.get());
     }
 }
-
-//    public void addContent(Content content) {
-//        contents.add(content);
-//        content.setExam(this);
-//    }
-//
-//    public void removeContent(Content content) {
-//        contents.remove(content);
-//        content.setExam(null);
-//    }

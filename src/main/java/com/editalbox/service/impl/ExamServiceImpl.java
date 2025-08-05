@@ -1,19 +1,21 @@
-package site.Spring.assessment;
+package com.editalbox.service.impl;
 
+import com.editalbox.model.Exam;
+import com.editalbox.repository.ExamRepository;
+import com.editalbox.service.ExamService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.support.PlaceholderResolver;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
 @Service
-public class ExamService {
+public class ExamServiceImpl implements ExamService {
 
     private final ExamRepository examRepository;
 
     @Autowired
-    ExamService(ExamRepository examRepository) {
+    ExamServiceImpl(ExamRepository examRepository) {
         this.examRepository = examRepository;
     }
 

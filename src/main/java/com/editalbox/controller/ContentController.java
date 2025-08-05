@@ -1,5 +1,7 @@
-package site.Spring.assessment;
+package com.editalbox.controller;
 
+import com.editalbox.service.ContentService;
+import com.editalbox.model.Content;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

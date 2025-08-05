@@ -1,4 +1,4 @@
-package site.Spring.assessment;
+package com.editalbox.model;
 
 import jakarta.persistence.*;
 
