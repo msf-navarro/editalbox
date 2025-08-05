@@ -26,7 +26,7 @@ public class ExamServiceImpl implements ExamService {
         else return null;
     }
 
-    public List<Exam> gelAllExams() {
+    public List<Exam> getAllExams() {
         return examRepository.findAll();
     }
 
