@@ -10,7 +10,7 @@ public interface ExamService {
 
     public Exam getExam(Long examId);
 
-    public List<Exam> gelAllExams();
+    public List<Exam> getAllExams();
 
     public Exam createExam(Exam exam);
 

@@ -7,6 +7,11 @@ A simple tool for tracking your progress in civil service exams topics.
 
 ### updates:
 
+August05<br/>
+- Created ExamServiceTest.<br/>
+- Fixed Mockito warnings during tests.<br/>
+  [To-do: fix testDeleteExam bug, add comments to ExamServiceTest, create ContentServiceTest (QoL), handle bad input in requests, Spring Security]<br/>
+
 August04<br/>
 - Added new packages to separate files, following
   conventions in project structure.<br/>
@@ -56,7 +61,7 @@ Controller and Service classes.<br/>
 - Added POST method for exams table.<br/>
 - Separated the controllers, services and repositories,
   following the Single Responsibility Principle.<br/>
-- Tested GET methods on Exam entity.<br/>  
+- Tested GET methods on Exam entity.<br/>
   [To-do: fix GET on Content entity and
   check if POST is also still working on both]<br/>
 

@@ -32,7 +32,7 @@ public class ExamConfig implements CommandLineRunner {
         Exam examB = new Exam(
                 "ExampleB (2007)",
                 2007,
-                0);
+                5);
         examRepository.save(examB);
 
     }

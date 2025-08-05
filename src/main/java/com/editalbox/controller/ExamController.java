@@ -24,7 +24,7 @@ public class ExamController {
 
     @GetMapping(path = "/exams")
     public List<Exam> getAllExams() {
-        return examService.gelAllExams();
+        return examService.getAllExams();
     }
 
     @PostMapping(path = "/admin/resources/exams")
