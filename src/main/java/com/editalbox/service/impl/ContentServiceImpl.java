@@ -31,11 +31,11 @@ public class ContentServiceImpl implements ContentService {
         else return null;
     }
 
-    public List<Content> gelAllContentsFromExamId(Long requestedExamId) {
+    public List<Content> getAllContentsFromExamId(Long requestedExamId) {
         return contentRepository.findContentByExamId(requestedExamId);
     }
 
-    public List<Content> gelAllContents(){
+    public List<Content> getAllContents(){
         return contentRepository.findAll();
     }
 

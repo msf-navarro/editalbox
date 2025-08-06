@@ -25,6 +25,7 @@ public class ExamServiceTest {
 
     @Test
     public void testGetExam(){
+        // Asserts that an exam with the expected properties (name, year, userCount) exists.
 
         Optional<Exam> examOptional = Optional.ofNullable(examService.getExam(1L));
 
@@ -39,6 +40,8 @@ public class ExamServiceTest {
 
     @Test
     public void testGetAllExams() {
+        /* Asserts that the method will retrieve all existing exams and their correct
+        properties. It expects two exams as it was defined in the ExamConfig class. */
 
         Optional<Exam> examOptional1 = Optional.ofNullable(examService.getAllExams().get(0));
         Optional<Exam> examOptional2 = Optional.ofNullable(examService.getAllExams().get(1));
@@ -63,11 +66,17 @@ public class ExamServiceTest {
 
     @Test
     public void testCreateExam(){
+        /* Asserts that the exam doesn't exist prior to the method
+        and that it is created after it with its correct properties. */
+
+        Optional<Exam> examOptional = Optional.ofNullable(examService.getExam(3L));
+        assertThat(examOptional).isNotPresent();
 
         Exam createdExam = new Exam("MyExample (2008)", 2008,93);
         examService.createExam(createdExam);
 
-        Optional<Exam> examOptional = Optional.ofNullable(examService.getExam(3L));
+        // examOptional is reassigned to receive the updated value of exam.
+        examOptional = Optional.ofNullable(examService.getExam(3L));
 
         assertThat(examOptional).isPresent();
         if (examOptional.isPresent()) {
@@ -80,6 +89,17 @@ public class ExamServiceTest {
 
     @Test
     public void testUpdateExam(){
+        /* Asserts that the exam has previous properties prior to the method,
+        and that said properties have their expected value after the method. */
+
+        Optional<Exam> examOptional = Optional.ofNullable(examService.getExam(2L));
+
+        if (examOptional.isPresent()) {
+            Exam exam = examOptional.get();
+            assertThat(exam.getName()).isEqualTo("ExampleB (2007)");
+            assertThat(exam.getYear()).isEqualTo(2007);
+            assertThat(exam.getUserCount()).isEqualTo(5);
+        }
 
         examService.updateExam(
                 2L,
@@ -88,7 +108,8 @@ public class ExamServiceTest {
                 null
         );
 
-        Optional<Exam> examOptional = Optional.ofNullable(examService.getExam(2L));
+        // examOptional is reassigned to receive the updated value of exam.
+        examOptional = Optional.ofNullable(examService.getExam(2L));
 
         assertThat(examOptional).isPresent();
         if (examOptional.isPresent()) {
@@ -103,16 +124,18 @@ public class ExamServiceTest {
 
     @Test
     public void testDeleteExam() {
+        /* Asserts that the exam existed prior to the method, and
+        that said exam was successfully deleted after the method. */
 
         Optional<Exam> examOptional = Optional.ofNullable(examService.getExam(2L));
 
         assertThat(examOptional).isPresent();
         if (examOptional.isPresent()) {
             examService.deleteExam(2L);
-            //Returning the wrong value; Should NOT be present.
+            /* examOptional is reassigned to receive the updated value of exam. Otherwise,
+            it would retain the old value, resulting in .isNotPresent() to return false. */
+            examOptional = Optional.ofNullable(examService.getExam(2L));
             assertThat(examOptional).isNotPresent();
-            /* When asserting the userCount, it is true for 5,
-            confirming that it was indeed not deleted. */
         }
     }
 }

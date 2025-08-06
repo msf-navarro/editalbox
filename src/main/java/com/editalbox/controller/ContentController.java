@@ -24,12 +24,12 @@ public class ContentController {
 
     @GetMapping(path = "/admin/resources/contents")
     public List<Content> getAllContents(){
-        return contentService.gelAllContents();
+        return contentService.getAllContents();
     }
 
     @GetMapping(path = "/exams/{id}/contents")
     public List<Content> getAllContentsfromExamId(@PathVariable("id") Long requestedExamId){
-        return contentService.gelAllContentsFromExamId(requestedExamId);
+        return contentService.getAllContentsFromExamId(requestedExamId);
     }
 
     @PostMapping(path = "/admin/resources/contents")

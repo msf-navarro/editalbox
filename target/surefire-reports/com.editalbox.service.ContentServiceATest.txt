@@ -1,0 +1,46 @@
+-------------------------------------------------------------------------------
+Test set: com.editalbox.service.ContentServiceATest
+-------------------------------------------------------------------------------
+Tests run: 4, Failures: 2, Errors: 2, Skipped: 0, Time elapsed: 0.101 s <<< FAILURE! -- in com.editalbox.service.ContentServiceATest
+com.editalbox.service.ContentServiceATest.testGetAllContentsFromExamId -- Time elapsed: 0.055 s <<< ERROR!
+java.lang.IndexOutOfBoundsException: Index 1 out of bounds for length 1
+	at java.base/jdk.internal.util.Preconditions.outOfBounds(Preconditions.java:100)
+	at java.base/jdk.internal.util.Preconditions.outOfBoundsCheckIndex(Preconditions.java:106)
+	at java.base/jdk.internal.util.Preconditions.checkIndex(Preconditions.java:302)
+	at java.base/java.util.Objects.checkIndex(Objects.java:385)
+	at java.base/java.util.ArrayList.get(ArrayList.java:427)
+	at com.editalbox.service.ContentServiceATest.testGetAllContentsFromExamId(ContentServiceATest.java:48)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+
+com.editalbox.service.ContentServiceATest.testCreateContent -- Time elapsed: 0.012 s <<< FAILURE!
+java.lang.AssertionError: 
+
+Expecting Optional to contain a value but it was empty.
+	at com.editalbox.service.ContentServiceATest.testCreateContent(ContentServiceATest.java:129)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+
+com.editalbox.service.ContentServiceATest.testGetContent -- Time elapsed: 0.008 s <<< FAILURE!
+java.lang.AssertionError: 
+
+Expecting Optional to contain a value but it was empty.
+	at com.editalbox.service.ContentServiceATest.testGetContent(ContentServiceATest.java:30)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+
+com.editalbox.service.ContentServiceATest.testGetAllContents -- Time elapsed: 0.014 s <<< ERROR!
+java.lang.IndexOutOfBoundsException: Index 1 out of bounds for length 1
+	at java.base/jdk.internal.util.Preconditions.outOfBounds(Preconditions.java:100)
+	at java.base/jdk.internal.util.Preconditions.outOfBoundsCheckIndex(Preconditions.java:106)
+	at java.base/jdk.internal.util.Preconditions.checkIndex(Preconditions.java:302)
+	at java.base/java.util.Objects.checkIndex(Objects.java:385)
+	at java.base/java.util.ArrayList.get(ArrayList.java:427)
+	at com.editalbox.service.ContentServiceATest.testGetAllContents(ContentServiceATest.java:80)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+

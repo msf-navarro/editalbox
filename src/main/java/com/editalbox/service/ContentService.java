@@ -10,9 +10,9 @@ public interface ContentService {
 
     public Content getContent(Long id);
 
-    public List<Content> gelAllContentsFromExamId(Long requestedExamId);
+    public List<Content> getAllContentsFromExamId(Long requestedExamId);
 
-    public List<Content> gelAllContents();
+    public List<Content> getAllContents();
 
     public Content createContent(Content content);
 

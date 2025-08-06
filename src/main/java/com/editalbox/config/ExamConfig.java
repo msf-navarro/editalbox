@@ -23,11 +23,19 @@ public class ExamConfig implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
 
+        /* The following values are used for checks in
+        the ExamServiceTest and the ContentServiceTest.
+        Do NOT change them. */
+
         Exam examA = new Exam(
                 "ExampleA (2009)",
                 2009,
                 0);
         examRepository.save(examA);
+
+        /* The following values are used for checks in
+        the ExamServiceTest and the ContentServiceTest.
+        Do NOT change them. */
 
         Exam examB = new Exam(
                 "ExampleB (2007)",

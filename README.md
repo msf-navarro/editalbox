@@ -7,6 +7,13 @@ A simple tool for tracking your progress in civil service exams topics.
 
 ### updates:
 
+August06<br/>
+- Fixed testDeleteExam bug.<br/>
+- Added comments to ExamServiceTest.<br/>
+- Created ContentServiceATest.<br/>
+- Created ContentServiceBTest, due to unresolved bug.<br/> 
+  [To-do: handle bad input in requests, Spring Security]<br/>
+
 August05<br/>
 - Created ExamServiceTest.<br/>
 - Fixed Mockito warnings during tests.<br/>
