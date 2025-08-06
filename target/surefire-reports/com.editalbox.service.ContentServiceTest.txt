@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.editalbox.service.ContentServiceTest
+-------------------------------------------------------------------------------
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 5.123 s -- in com.editalbox.service.ContentServiceTest

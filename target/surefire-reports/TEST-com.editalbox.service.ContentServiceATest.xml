@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" version="3.0.2" name="com.editalbox.service.ExamServiceTest" time="0.164" tests="5" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" version="3.0.2" name="com.editalbox.service.ContentServiceATest" time="0.101" tests="4" errors="2" skipped="0" failures="2">
   <properties>
     <property name="java.specification.version" value="21"/>
     <property name="sun.jnu.encoding" value="UTF-8"/>
@@ -62,131 +62,34 @@
     <property name="java.class.version" value="65.0"/>
     <property name="LOGGED_APPLICATION_NAME" value="[SpringV3] "/>
   </properties>
-  <testcase name="testGetAllExams" classname="com.editalbox.service.ExamServiceTest" time="0.02">
-    <system-out><![CDATA[2025-08-06T16:20:57.678-03:00  INFO 31671 --- [SpringV3] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.editalbox.service.ExamServiceTest]: ExamServiceTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-2025-08-06T16:20:57.681-03:00  INFO 31671 --- [SpringV3] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.editalbox.EditalboxApplication for test class com.editalbox.service.ExamServiceTest
+  <testcase name="testGetAllContentsFromExamId" classname="com.editalbox.service.ContentServiceATest" time="0.055">
+    <error message="Index 1 out of bounds for length 1" type="java.lang.IndexOutOfBoundsException"><![CDATA[java.lang.IndexOutOfBoundsException: Index 1 out of bounds for length 1
+	at java.base/jdk.internal.util.Preconditions.outOfBounds(Preconditions.java:100)
+	at java.base/jdk.internal.util.Preconditions.outOfBoundsCheckIndex(Preconditions.java:106)
+	at java.base/jdk.internal.util.Preconditions.checkIndex(Preconditions.java:302)
+	at java.base/java.util.Objects.checkIndex(Objects.java:385)
+	at java.base/java.util.ArrayList.get(ArrayList.java:427)
+	at com.editalbox.service.ContentServiceATest.testGetAllContentsFromExamId(ContentServiceATest.java:48)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+]]></error>
+    <system-out><![CDATA[2025-08-06T16:20:57.845-03:00  INFO 31671 --- [SpringV3] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.editalbox.service.ContentServiceATest]: ContentServiceATest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2025-08-06T16:20:57.846-03:00  INFO 31671 --- [SpringV3] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.editalbox.EditalboxApplication for test class com.editalbox.service.ContentServiceATest
 Hibernate: 
     select
-        e1_0.id,
-        e1_0.name,
-        e1_0.user_count,
-        e1_0.year 
-    from
-        exams e1_0
-Hibernate: 
-    select
-        e1_0.id,
-        e1_0.name,
-        e1_0.user_count,
-        e1_0.year 
-    from
-        exams e1_0
-]]></system-out>
-  </testcase>
-  <testcase name="testUpdateExam" classname="com.editalbox.service.ExamServiceTest" time="0.04">
-    <system-out><![CDATA[Hibernate: 
-    select
-        e1_0.id,
-        e1_0.name,
-        e1_0.user_count,
-        e1_0.year 
-    from
-        exams e1_0 
-    where
-        e1_0.id=?
-Hibernate: 
-    select
-        e1_0.id,
-        e1_0.name,
-        e1_0.user_count,
-        e1_0.year 
-    from
-        exams e1_0 
-    where
-        e1_0.id=?
-Hibernate: 
-    select
-        e1_0.id,
-        e1_0.name,
-        e1_0.user_count,
-        e1_0.year,
-        c1_0.exam_id,
         c1_0.id,
+        c1_0.exam_id,
         c1_0.subject,
         c1_0.text 
     from
-        exams e1_0 
-    left join
         contents c1_0 
+    join
+        exams e1_0 
             on e1_0.id=c1_0.exam_id 
     where
         e1_0.id=?
 Hibernate: 
-    update
-        exams 
-    set
-        name=?,
-        user_count=?,
-        year=? 
-    where
-        id=?
-Hibernate: 
-    select
-        e1_0.id,
-        e1_0.name,
-        e1_0.user_count,
-        e1_0.year 
-    from
-        exams e1_0 
-    where
-        e1_0.id=?
-]]></system-out>
-  </testcase>
-  <testcase name="testGetExam" classname="com.editalbox.service.ExamServiceTest" time="0.006">
-    <system-out><![CDATA[Hibernate: 
-    select
-        e1_0.id,
-        e1_0.name,
-        e1_0.user_count,
-        e1_0.year 
-    from
-        exams e1_0 
-    where
-        e1_0.id=?
-]]></system-out>
-  </testcase>
-  <testcase name="testCreateExam" classname="com.editalbox.service.ExamServiceTest" time="0.039">
-    <system-out><![CDATA[Hibernate: 
-    select
-        e1_0.id,
-        e1_0.name,
-        e1_0.user_count,
-        e1_0.year 
-    from
-        exams e1_0 
-    where
-        e1_0.id=?
-Hibernate: 
-    insert 
-    into
-        exams
-        (name, user_count, year, id) 
-    values
-        (?, ?, ?, ?)
-Hibernate: 
-    select
-        e1_0.id,
-        e1_0.name,
-        e1_0.user_count,
-        e1_0.year 
-    from
-        exams e1_0 
-    where
-        e1_0.id=?
-]]></system-out>
-  </testcase>
-  <testcase name="testDeleteExam" classname="com.editalbox.service.ExamServiceTest" time="0.045">
-    <system-out><![CDATA[Hibernate: 
     select
         e1_0.id,
         e1_0.name,
@@ -198,43 +101,139 @@ Hibernate:
         e1_0.id=?
 Hibernate: 
     select
-        count(*) 
-    from
-        exams e1_0 
-    where
-        e1_0.id=?
-Hibernate: 
-    select
-        e1_0.id,
-        e1_0.name,
-        e1_0.user_count,
-        e1_0.year 
-    from
-        exams e1_0 
-    where
-        e1_0.id=?
-Hibernate: 
-    select
-        c1_0.exam_id,
         c1_0.id,
+        c1_0.exam_id,
+        c1_0.subject,
+        c1_0.text 
+    from
+        contents c1_0 
+    join
+        exams e1_0 
+            on e1_0.id=c1_0.exam_id 
+    where
+        e1_0.id=?
+Hibernate: 
+    select
+        e1_0.id,
+        e1_0.name,
+        e1_0.user_count,
+        e1_0.year 
+    from
+        exams e1_0 
+    where
+        e1_0.id=?
+]]></system-out>
+  </testcase>
+  <testcase name="testCreateContent" classname="com.editalbox.service.ContentServiceATest" time="0.012">
+    <failure message="&#10;Expecting Optional to contain a value but it was empty." type="java.lang.AssertionError"><![CDATA[java.lang.AssertionError: 
+
+Expecting Optional to contain a value but it was empty.
+	at com.editalbox.service.ContentServiceATest.testCreateContent(ContentServiceATest.java:129)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+]]></failure>
+    <system-out><![CDATA[Hibernate: 
+    select
+        c1_0.id,
+        c1_0.exam_id,
         c1_0.subject,
         c1_0.text 
     from
         contents c1_0 
     where
-        c1_0.exam_id=?
+        c1_0.id=?
 Hibernate: 
-    delete 
+    select
+        e1_0.id,
+        e1_0.name,
+        e1_0.user_count,
+        e1_0.year 
     from
-        contents 
+        exams e1_0 
     where
-        id=?
+        e1_0.id=?
 Hibernate: 
-    delete 
+    select
+        c1_0.id,
+        c1_0.exam_id,
+        c1_0.subject,
+        c1_0.text 
     from
-        exams 
+        contents c1_0 
     where
-        id=?
+        c1_0.id=?
+]]></system-out>
+  </testcase>
+  <testcase name="testGetContent" classname="com.editalbox.service.ContentServiceATest" time="0.008">
+    <failure message="&#10;Expecting Optional to contain a value but it was empty." type="java.lang.AssertionError"><![CDATA[java.lang.AssertionError: 
+
+Expecting Optional to contain a value but it was empty.
+	at com.editalbox.service.ContentServiceATest.testGetContent(ContentServiceATest.java:30)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+]]></failure>
+    <system-out><![CDATA[Hibernate: 
+    select
+        c1_0.id,
+        c1_0.exam_id,
+        c1_0.subject,
+        c1_0.text 
+    from
+        contents c1_0 
+    where
+        c1_0.id=?
+Hibernate: 
+    select
+        c1_0.id,
+        c1_0.exam_id,
+        c1_0.subject,
+        c1_0.text 
+    from
+        contents c1_0 
+    where
+        c1_0.id=?
+]]></system-out>
+  </testcase>
+  <testcase name="testGetAllContents" classname="com.editalbox.service.ContentServiceATest" time="0.014">
+    <error message="Index 1 out of bounds for length 1" type="java.lang.IndexOutOfBoundsException"><![CDATA[java.lang.IndexOutOfBoundsException: Index 1 out of bounds for length 1
+	at java.base/jdk.internal.util.Preconditions.outOfBounds(Preconditions.java:100)
+	at java.base/jdk.internal.util.Preconditions.outOfBoundsCheckIndex(Preconditions.java:106)
+	at java.base/jdk.internal.util.Preconditions.checkIndex(Preconditions.java:302)
+	at java.base/java.util.Objects.checkIndex(Objects.java:385)
+	at java.base/java.util.ArrayList.get(ArrayList.java:427)
+	at com.editalbox.service.ContentServiceATest.testGetAllContents(ContentServiceATest.java:80)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+]]></error>
+    <system-out><![CDATA[Hibernate: 
+    select
+        c1_0.id,
+        c1_0.exam_id,
+        c1_0.subject,
+        c1_0.text 
+    from
+        contents c1_0
+Hibernate: 
+    select
+        e1_0.id,
+        e1_0.name,
+        e1_0.user_count,
+        e1_0.year 
+    from
+        exams e1_0 
+    where
+        e1_0.id=?
+Hibernate: 
+    select
+        c1_0.id,
+        c1_0.exam_id,
+        c1_0.subject,
+        c1_0.text 
+    from
+        contents c1_0
 Hibernate: 
     select
         e1_0.id,

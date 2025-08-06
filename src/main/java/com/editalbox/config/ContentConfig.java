@@ -36,6 +36,9 @@ public class ContentConfig implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
 
+        /* The following values are used for checks in
+        the ContentServiceTest. Do NOT change them. */
+
         Content contentA1 = new Content(
                 1L,
                 "statistics",
@@ -43,12 +46,18 @@ public class ContentConfig implements CommandLineRunner {
         linkContentToExam(contentA1);
         contentRepository.save(contentA1);
 
+        /* The following values are used for checks in
+        the ContentServiceTest. Do NOT change them. */
+
         Content contentA2 = new Content(
                 1L,
                 "statistics",
                 "conditional probability");
         linkContentToExam(contentA2);
         contentRepository.save(contentA2);
+
+        /* The following values are used for checks in
+        the ContentServiceTest. Do NOT change them. */
 
         Content contentB1 = new Content(
                 2L,
