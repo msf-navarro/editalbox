@@ -9,9 +9,9 @@ A simple tool for tracking your progress in civil service exams topics.
 ### updates:
 
 August11<br/>
-- Created a custom runtime exception for requests not found.
-- Created a custom runtime exception for invalid requests.
-- Created an exception handler.
+- Created a custom runtime exception for requests not found.<br/>
+- Created a custom runtime exception for invalid requests.<br/>
+- Created an exception handler.<br/>
   [To-do: test if exceptions work for all requests, handle remainder bad inputs, Spring Security]<br/>
 
 August06<br/>
