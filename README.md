@@ -7,6 +7,12 @@ A simple tool for tracking your progress in civil service exams topics.
 
 ### updates:
 
+August11<br/>
+- Created a custom runtime exception for requests not found.
+- Created a custom runtime exception for invalid requests.
+- Created an exception handler.
+  [To-do: test if exceptions work for all requests, handle remainder bad inputs, Spring Security]<br/>
+
 August06<br/>
 - Fixed testDeleteExam bug.<br/>
 - Added comments to ExamServiceTest.<br/>

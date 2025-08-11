@@ -1,5 +1,6 @@
 package com.editalbox.service.impl;
 
+import com.editalbox.exceptions.ResourceNotFoundException;
 import com.editalbox.model.Exam;
 import com.editalbox.repository.ExamRepository;
 import com.editalbox.service.ExamService;
@@ -23,7 +24,7 @@ public class ExamServiceImpl implements ExamService {
         Optional<Exam> examOptional = examRepository.findById(examId);
         if (examOptional.isPresent())
             return examOptional.get();
-        else return null;
+        else throw new ResourceNotFoundException("exam", examId);
     }
 
     public List<Exam> getAllExams() {
