@@ -1,5 +1,6 @@
 package com.editalbox.controller;
 
+import com.editalbox.exceptions.ResourceNotFoundException;
 import com.editalbox.service.ExamService;
 import com.editalbox.model.Exam;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,6 +21,13 @@ public class ExamController {
     @GetMapping(path = "/exams/{id}")
     public Exam getExam(@PathVariable("id") Long examId) {
         return examService.getExam(examId);
+    }
+
+    /* Added to prevent said method from returning a status 404
+    JSON object instead of calling RestoControllerExceptionHandler */
+    @GetMapping(path = "/exams/")
+    public void blankGetExam(){
+        throw new ResourceNotFoundException("exam", null);
     }
 
     @GetMapping(path = "/exams")

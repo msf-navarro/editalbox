@@ -11,8 +11,10 @@ import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 @SpringBootTest
 public class ContentServiceATest {
 
-    private final ContentService contentService;
+    /*Note: the expected results written in the tests are
+    based on the values provided in the ContentConfig class.*/
 
+    private final ContentService contentService;
 
     @Autowired
     public ContentServiceATest(ContentService contentService) {
