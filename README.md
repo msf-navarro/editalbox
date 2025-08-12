@@ -24,7 +24,7 @@ Exam requests.</br>
 - Ran automated tests to assure the integrity of 
 core functionalities.</br>
   [Known issues: ResourceNotFoundException is interfering with 
-testCreateExam() and testDeleteExam()]<br/>
+testCreateExam and testDeleteExam]<br/>
   [To-do: Fix known issues, handle remainder Exam exceptions, 
 handle Content exceptions, Spring Security]<br/>
 
