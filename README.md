@@ -8,6 +8,26 @@ A simple tool for tracking your progress in civil service exams topics.
 
 ### updates:
 
+August12<br/>
+- Improved the exception messages provided by the 
+exception handler.</br>
+- Fixed a bug where blank id requests to getExam would 
+retrieve a 404 JSON object.<br/>
+- Created a custom runtime exception for empty inputs.<br/>
+- Ensured that createExam only accepts requests with 
+non-null inputs for name and year.<br/>
+- Ensured that new createExam requests will always
+have userCount set to zero.<br/>
+- Added log messages with identifiers for valid
+Exam requests.</br>
+- Tested all above implementations.</br>
+- Ran automated tests to assure the integrity of 
+core functionalities.</br>
+  [Known issues: ResourceNotFoundException is interfering with 
+testCreateExam() and testDeleteExam]<br/>
+  [To-do: Fix known issues, handle remainder Exam exceptions, 
+handle Content exceptions, Spring Security]<br/>
+
 August11<br/>
 - Created a custom runtime exception for requests not found.<br/>
 - Created a custom runtime exception for invalid requests.<br/>
@@ -24,7 +44,8 @@ August06<br/>
 August05<br/>
 - Created ExamServiceTest.<br/>
 - Fixed Mockito warnings during tests.<br/>
-  [To-do: fix testDeleteExam bug, add comments to ExamServiceTest, create ContentServiceTest (QoL), handle bad input in requests, Spring Security]<br/>
+  [To-do: fix testDeleteExam bug, add comments to ExamServiceTest, 
+   create ContentServiceTest (QoL), handle bad input in requests, Spring Security]<br/>
 
 August04<br/>
 - Added new packages to separate files, following

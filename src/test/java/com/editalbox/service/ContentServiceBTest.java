@@ -13,6 +13,9 @@ separately, since it was causing error in other tests. */
 @SpringBootTest
 public class ContentServiceBTest {
 
+    /*Note: the expected results written in the tests are
+    based on the values provided in the ContentConfig class.*/
+
     private final ContentService contentService;
 
     @Autowired
