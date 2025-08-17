@@ -7,6 +7,13 @@ A simple tool for tracking your progress in civil service exams topics.
 
 ### updates:
 
+August16~18<br/>
+- Studied Vue.js to start implementing a responsive  
+responsive frontend to serve the backend content.
+- Added @CrossOrigin on both controllers to allow
+local frontend requests during development. 
+
+
 August12<br/>
 - Improved the exception messages provided by the 
 exception handler.</br>
@@ -23,7 +30,7 @@ Exam requests.</br>
 - Ran automated tests to assure the integrity of 
 core functionalities.</br>
   [Known issues: ResourceNotFoundException is interfering with 
-testCreateExam() and testDeleteExam]<br/>
+testCreateExam and testDeleteExam]<br/>
   [To-do: Fix known issues, handle remainder Exam exceptions, 
 handle Content exceptions, Spring Security]<br/>
 
